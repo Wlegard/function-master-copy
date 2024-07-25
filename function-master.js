@@ -3,7 +3,8 @@
 //////////////////////////////////////////////////////////////////////
 
 function objectValues(object) {
-    // code
+    //return--- this method takes all values from the object object and returns them as an array.
+    return Object.values(object);
 } 
 
 //////////////////////////////////////////////////////////////////////
@@ -11,6 +12,9 @@ function objectValues(object) {
 //////////////////////////////////////////////////////////////////////
 
 function keysToString(object) {
+    //This method takes all the keys from the object object and returns them as an array.
+    //Joins the array of keys into a single string, with each key separated by a space.
+    return Object.keys(object).join(' ');
 
 }
 
@@ -19,7 +23,11 @@ function keysToString(object) {
 //////////////////////////////////////////////////////////////////////
 
 function valuesToString(object) {
-    
+    //gets all values from the object object and returns them as an array.
+    //Filters the array to keep only string values.
+    //Joins the filtered string values into a single string, separated by spaces.
+    return Object.values(object).filter(value => typeof value === 'string').join(' ');
+
 }
 
 //////////////////////////////////////////////////////////////////////
@@ -27,14 +35,17 @@ function valuesToString(object) {
 //////////////////////////////////////////////////////////////////////
 
 function arrayOrObject(collection) {
-    
-}
+    return Array.isArray(collection) ? 'array': 'object';
+      
+    }
+
 
 //////////////////////////////////////////////////////////////////////
 // Function 5 - Capitalize Word //////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
 
 function capitalizeWord(string) {
+    return string[0].toUpperCase + string.slice(1);
     
 }
 
@@ -43,7 +54,9 @@ function capitalizeWord(string) {
 //////////////////////////////////////////////////////////////////////
 
 function capitalizeAllWords(string) {
-    
+    return string.split(' ')
+    .map(word => capitalizeWord(word))
+    .join(' ');
 }
 
 //////////////////////////////////////////////////////////////////////
